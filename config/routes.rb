@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-root 'welcome#index'
+root 'dashboard#index'
 
   resources :companies do
-    resources :contacts
+    resources :contacts, only: [:create]
     resources :jobs do
-      resources :comments
+      resources :comments, only: [:create]
     end
   end
   resources :categories
