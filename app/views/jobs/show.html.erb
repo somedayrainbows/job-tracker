@@ -1,4 +1,8 @@
-Title: <%= @job.title %>
+
+<h1><%= @job.title %></h1>
+<h3>at <%= link_to @job.company.name, company_path(@job.company) %></h3>
+<p>
+<strong>Title:</strong> <%= @job.title %>
 <br>
 
 Description: <%= @job.description %>
@@ -10,4 +14,5 @@ Level of Interest: <%= @job.level_of_interest %>
 City: <%= @job.city %>
 <br>
 
-Company: <%= link_to @job.company.name, company_path(@job.company) %>
+Company: <%= @job.company.name %>
+</p>
