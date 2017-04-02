@@ -1,21 +1,17 @@
 <%= form_for [@company, @job] do |f| %>
-<div class="field">
   <%= f.label :title %>:
   <%= f.text_field :title %><br><br>
-</div>
-<div class="field">
+
   <%= f.label :description %>:
   <%= f.text_field :description %><br><br>
-</div>
-<div class="field">
+
   <%= f.label :level_of_interest %>:
   <%= f.number_field :level_of_interest %><br><br>
-</div>
-<div class="field">
+
   <%= f.label :city %>:
   <%= f.text_field :city %><br><br>
-</div>
-<div class="field">
+
+  <%= f.collection_select(:category_id, Category.all, :id, :title) %>
+
   <%= f.submit %>
-</div>
 <% end %>

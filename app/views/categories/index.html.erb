@@ -1,0 +1,13 @@
+<h1>All Categories</h1>
+
+<% @categories.each do |category| %>
+<%= link_to category.title, category_path(category) %><br>
+<%= link_to "edit category", edit_category_path(category) %> |
+<%= link_to "delete category", category_path(category), method: :delete, data: {confirm: "Really delete this category?"} %><br><br>
+
+<% end %>
+<hr>
+<p>
+<%= link_to "<< back to dashboard", root_path %> |
+<%= link_to "add a new category", new_category_path %>
+</p>

@@ -1,0 +1,9 @@
+<h1>All jobs for <%= @category.title %></h1>
+
+<% @category.jobs.each do |job| %>
+<%= job.title at job.company.name%>
+
+<% end %>
+<p>
+<%= link_to "<< return to categories index", categories_path %>
+</p>
