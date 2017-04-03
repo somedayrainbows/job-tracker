@@ -13,11 +13,13 @@ class CategoriesController < ApplicationController
       flash[:success] = "#{@category.title} added!"
       redirect_to category_path(@category)
     else
+      flash[:success] = "#{@category.title} already exists!"
       render :new
     end
   end
 
   def show
+    @company = Company.find(params[:id])
     @category = Category.find(params[:id])
   end
 

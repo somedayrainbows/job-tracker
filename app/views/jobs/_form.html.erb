@@ -11,7 +11,10 @@
   <%= f.label :city %>:
   <%= f.text_field :city %><br><br>
 
+  <%= f.label :category_id %>
   <%= f.collection_select(:category_id, Category.all, :id, :title) %>
+
+  <%= link_to "category not listed? add a new one!", new_category_path %><br><br>
 
   <%= f.submit %>
 <% end %>
