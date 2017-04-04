@@ -1,9 +1,9 @@
 <h1>All jobs for <%= @category.title %></h1>
 
 <% @category.jobs.each do |job| %>
-<% if @company. %>
-<%= link_to job.title, company_job_path(@company, job) %><br><br>
+  <%= link_to job.title, company_job_path(job.company, job) %> at <%= job.company.name %> <br><br>
 
+  <!-- <%#= link_to job.title, company_job_path(@company, job) %><br><br> -->
 <% end %>
 <p>
 <%= link_to "<< return to categories index", categories_path %>

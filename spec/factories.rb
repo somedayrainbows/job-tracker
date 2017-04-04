@@ -13,4 +13,10 @@ FactoryGirl.define do
     city
     level_of_interest
   end
+
+  factory :contact do
+    full_name
+    position
+    email
+  end
 end

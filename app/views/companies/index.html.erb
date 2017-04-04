@@ -1,7 +1,7 @@
 <h3>All Companies</h3>
 
 <% @companies.each do |company| %>
-  <div class=company_<%= company.id %>>
+  <div class="company_<%= company.id %>">
     view jobs at <%= link_to company.name, company_path(company) %><br>
     <%= link_to "edit company", edit_company_path(company) %> |
     <%= link_to "delete company", company_path(company), method: :delete, data: {confirm: "Really delete this company?"} %><br><br>

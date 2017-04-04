@@ -8,6 +8,7 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'database_cleaner'
 require 'support/factory_girl'
+require 'shoulda-matchers'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -16,9 +17,10 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
-  config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+  config.include FactoryGirl::Syntax::Methods
 end
 
 Shoulda::Matchers.configure do |config|
@@ -28,16 +30,14 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-DatabaseCleaner.strategy = :truncation
-RSpec.configure do |c|
-  c.before(:all) do
-    DatabaseCleaner.clean
-  end
-  c.after(:each) do
-    DatabaseCleaner.clean
-  end
-end
 
-RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
-end
+
+# DatabaseCleaner.strategy = :truncation
+# RSpec.configure do |c|
+#   c.before(:all) do
+#     DatabaseCleaner.clean
+#   end
+#   c.after(:each) do
+#     DatabaseCleaner.clean
+#   end
+# end

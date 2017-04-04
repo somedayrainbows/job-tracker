@@ -19,7 +19,6 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @company = Company.find(params[:id])
     @category = Category.find(params[:id])
   end
 
