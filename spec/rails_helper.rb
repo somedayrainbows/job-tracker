@@ -30,8 +30,6 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-
-
 # DatabaseCleaner.strategy = :truncation
 # RSpec.configure do |c|
 #   c.before(:all) do

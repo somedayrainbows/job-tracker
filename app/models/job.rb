@@ -4,4 +4,5 @@ class Job < ActiveRecord::Base
   belongs_to :company
   has_many :comments, dependent: :destroy
   belongs_to :category
+  has_and_belongs_to_many :tags
 end

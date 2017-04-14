@@ -1,30 +1,24 @@
 FactoryGirl.define do
-  factory :company do
-    name
-  end
 
-  sequence :name do |n|
-    n
+  factory :company do
+    sequence(:name) { |n| "#{n} company" }
   end
 
   factory :job do
-    title
-    description "test"
-    city "Denver"
-    level_of_interest 5
-  end
-
-  sequence :title do |n|
-    n
+    sequence(:title) { |n| "#{n} title" }
+    description "description"
+    city        "denver"
+    level_of_interest 50
   end
 
   factory :contact do
-    full_name
-    position "director"
-    email "e@gmail.com"
+    sequence(:full_name) { |n| "#{n} full_name" }
+    position  "position"
+    email    { "#{full_name}@example.com" }
   end
 
-  sequence :full_name do |n|
-    n
+  factory :category do
+    sequence(:title) { |n| "#{n} title" }
   end
+
 end
